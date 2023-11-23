@@ -1,0 +1,92 @@
+<div class="flex flex-col flex-auto min-w-0">
+    <div id="header" class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent">
+        <div class="flex-1 min-w-0">
+            <div class="mt-2">
+                <h2 class="text-white text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate">
+                    Mezclas
+                </h2>
+            </div>
+        </div>
+        <div class="flex shrink-0 items-center mt-4 sm:mt-0 sm:ml-4">
+            <mat-form-field class="fuse-mat-dense fuse-mat-no-subscript fuse-mat-rounded min-w-64">
+                <mat-icon class="icon-size-5" matPrefix [svgIcon]="'heroicons_solid:search'"></mat-icon>
+                <input matInput [(ngModel)]="buscar" (keyup)="buscarData()" [autocomplete]="'off'" placeholder="Buscar" />
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="flex-auto overflow-hidden">
+        <div class="flex flex-col flex-auto sm:mb-18 overflow-hidden sm:overflow-y-auto">
+            <div class="max-h-screen ">
+                <table class="w-full" mat-table [dataSource]="tabla" matSort>
+                    <ng-container matColumnDef="formula">
+                        <th mat-header-cell *matHeaderCellDef class="text-white text-md">
+                            Formula
+                        </th>
+                        <td mat-cell *matCellDef="let element">
+                            {{ element.mzc_codigo }}
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="descripcion">
+                        <th mat-header-cell *matHeaderCellDef class="text-white text-md">
+                            Descripción
+                        </th>
+                        <td mat-cell *matCellDef="let element">
+                            {{ element.mzc_nombre }}
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="resistencia">
+                        <th mat-header-cell *matHeaderCellDef class="text-right text-white text-md">
+                            Resistencia
+                        </th>
+                        <td mat-cell *matCellDef="let element" class="text-right">
+                            {{ element.mzc_resist }}
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="cemento">
+                        <th mat-header-cell *matHeaderCellDef class="text-right text-white text-md">
+                            Cemento
+                        </th>
+                        <td mat-cell *matCellDef="let element" class="text-right">
+                            {{ element.mzc_cement }}
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="agua">
+                        <th mat-header-cell *matHeaderCellDef class="text-right text-white text-md">
+                            Agua
+                        </th>
+                        <td mat-cell *matCellDef="let element" class="text-right">
+                            {{ element.mzc_agua }}
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="arena">
+                        <th mat-header-cell *matHeaderCellDef class="text-right text-white text-md">
+                            Arena
+                        </th>
+                        <td mat-cell *matCellDef="let element" class="text-right">
+                            {{ element.mzc_arena }}
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="piedra">
+                        <th mat-header-cell *matHeaderCellDef class="text-right text-white text-md">
+                            Piedra
+                        </th>
+                        <td mat-cell *matCellDef="let element" class="text-right">
+                            {{ element.mzc_pie_pi }}
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="graba">
+                        <th mat-header-cell *matHeaderCellDef class="text-white text-right text-md">
+                            Graba
+                        </th>
+                        <td mat-cell *matCellDef="let element" class="text-right">
+                            {{ element.mzc_can_ro }}
+                        </td>
+                    </ng-container>
+                    <tr class="bg-encabezado-tabla" mat-header-row *matHeaderRowDef="columns; sticky: true"></tr>
+                    <tr mat-row *matRowDef="let row; columns: columns"></tr>
+                </table>
+            </div>
+            <mat-paginator [pageSizeOptions]="[10, 20, 30, 100]" showFirstLastButtons></mat-paginator>
+        </div>
+    </div>
+</div>

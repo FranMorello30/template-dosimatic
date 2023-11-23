@@ -1,0 +1,55 @@
+<input class="d-none" (change)="capturarFile($event)" type="file" #fileInput accept="image/jpeg,image/jpg,image/gif,image/png,application/pdf,.xlsx,.xls" />
+
+<button type="button" mat-flat-button (click)="fileInput.click()" matTooltip="Seleccionar y subir archivo" [disabled]="subiendo">
+    <mat-icon [svgIcon]="'heroicons_solid:paper-clip'"></mat-icon>
+    {{titulo}}
+</button>
+
+<mat-progress-bar mode="indeterminate" *ngIf="subiendo" ></mat-progress-bar>
+
+<div class="attachment-list">
+    <div
+        *ngFor="let adjunto of archivosSubidos"
+        class="attachment break-word"
+        fxLayout="row"
+        fxLayoutAlign="space-between center"
+    >
+        <div>
+            <span
+                class="filename cursor-adjuntos "
+                (click)="verArchivo(adjunto.nombre)"
+                >{{
+                    adjunto.nombreOriginal
+                }}</span
+            >
+            <span class="size ml-4"
+                >({{ adjunto.size }})</span
+            >
+        </div>
+
+        <button
+            mat-icon-button
+            (click)="
+                borrarArchivoSubido(
+                    adjunto.nombre
+                )
+            "
+        >
+            <mat-icon class="s-16"
+                >close</mat-icon
+            >
+        </button>
+    </div>
+</div>
+<div *ngIf="rutaPdf">
+    <mat-icon
+        class="s-16 text-right cursor-adjuntos"
+        (click)="ocultarVistaPrevia()"
+        >close</mat-icon
+    >
+    <iframe
+        *ngIf="rutaPdf"
+        [src]="rutaPdf | safeUrl"
+        style="width: 100%; height: 480px"
+    ></iframe>
+</div>

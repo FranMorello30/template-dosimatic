@@ -1,0 +1,21 @@
+<fuse-card class="grid grid-cols-2 max-h-100 w-full">
+    <div class="col-span-3">
+        <mat-form-field class="col-span-2 fuse-mat-dense fuse-mat-no-subscript text-right w-full p-1" >
+            <input  matInput autocomplete="off" [(ngModel)]="celda" /><span matSuffix>Kg</span>
+            <span matPrefix>{{nro}}</span>
+        </mat-form-field>
+    </div>
+    <!-- <div class="col-span-3 text-center text-2xl font-semibold leading-tight"></div> -->
+    <div class="col-span-2  ">
+        <img
+            class="w-full h-80 bg-cover"
+            src="assets/images/silo.png"
+            alt="Card cover image">
+    </div>
+    <div class="col-span-1">
+
+        <span class="flex items-end w-6 h-80  bg-green-200 rounded overflow-hidden">
+            <span class="flex w-full  bg-green-600" [ngStyle]="{'height': nivel+'%'}"></span>
+        </span>
+    </div>
+</fuse-card>

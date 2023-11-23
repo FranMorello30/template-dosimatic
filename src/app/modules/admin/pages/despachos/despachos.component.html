@@ -1,0 +1,505 @@
+<section class="w-full grid grid-cols-12">
+    <div class="col-span-3 ">
+        <!-- <fuse-card class="w-full mt-1" >
+            <form class="w-full" autocomplete="off" >
+                <div class="grid grid-cols-1 p-1 ">
+                    <button
+                        mat-raised-button
+                        type="button"
+
+                        [color]="'primary'"
+                        class="ml-auto mr-0"
+                    >
+                        <mat-icon>search</mat-icon> Clientes
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-3 ">
+                    <mat-form-field class="col-span-1 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+                        <mat-label>Id Fiscal</mat-label>
+                        <input  matInput autocomplete="off" />
+                    </mat-form-field>
+                    <mat-form-field class="col-span-2 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+                        <mat-label>Razón Social</mat-label>
+                        <input  matInput autocomplete="off" />
+                    </mat-form-field>
+                </div>
+                <div  class="grid grid-cols-2">
+                    <mat-form-field class="col-span-1 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+                        <mat-label>Teléfono</mat-label>
+                        <input matInput autocomplete="off" />
+                    </mat-form-field>
+                    <mat-form-field class="col-span-1 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+                        <mat-label>Email</mat-label>
+                        <input matInput autocomplete="off" />
+                    </mat-form-field>
+                </div>
+            </form>
+        </fuse-card>
+        <fuse-card class="w-full mt-1" >
+            <form class="w-full" autocomplete="off" >
+                <div class="grid grid-cols-1 p-1">
+                    <button mat-raised-button type="button" [color]="'primary'" class="ml-auto mr-0">
+                        <mat-icon>search</mat-icon> Obras
+                    </button>
+                </div>
+                <div class="grid grid-cols-3">
+                    <mat-form-field class="col-span-1 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+                        <mat-label>Codigo</mat-label>
+                        <input  matInput autocomplete="off" />
+                    </mat-form-field>
+                    <mat-form-field class="col-span-2 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+                        <mat-label>Nombre</mat-label>
+                        <input  matInput autocomplete="off" />
+                    </mat-form-field>
+
+                </div>
+                <div  class="grid grid-cols-3">
+                    <mat-form-field class="col-span-1 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+                        <mat-label>Tipo</mat-label>
+                        <mat-select >
+                            <mat-option *ngFor="let tipo of tipos" [value]="tipo.value">
+                                {{ tipo.label }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field class="col-span-2 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+                        <mat-label>Dirección</mat-label>
+                        <input matInput autocomplete="off" />
+                    </mat-form-field>
+
+                </div>
+                <div  class="grid grid-cols-3">
+                    <mat-form-field class="col-span-1 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+                        <mat-label>Contacto</mat-label>
+                        <input matInput autocomplete="off" />
+                    </mat-form-field>
+                    <mat-form-field class="col-span-1 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+                        <mat-label>Telefono</mat-label>
+                        <input matInput autocomplete="off" />
+                    </mat-form-field>
+                    <mat-form-field class="col-span-1 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+                        <mat-label>Email</mat-label>
+                        <input  matInput autocomplete="off" />
+                    </mat-form-field>
+                </div>
+            </form>
+        </fuse-card> -->
+        <fuse-card class="w-full mt-1 grid grid-cols-1" >
+            <div class="col-span-1 grid grid-cols-3 w-full p-1">
+                <mat-label class="col-span-1 m-auto">Nro Guia</mat-label>
+                <mat-form-field class="col-span-2 fuse-mat-dense fuse-mat-no-subscript" >
+                    <input  matInput autocomplete="off" />
+                </mat-form-field>
+            </div>
+            <div class="col-span-1 grid grid-cols-3 w-full p-1">
+                <mat-label class="col-span-1 m-auto">Fecha</mat-label>
+                <mat-form-field class="col-span-2 fuse-mat-dense fuse-mat-no-subscript" >
+                    <input  matInput autocomplete="off" />
+                </mat-form-field>
+            </div>
+            <div class="col-span-1 grid grid-cols-3 w-full p-1">
+                <mat-label class="col-span-1 m-auto">Cliente</mat-label>
+                <mat-form-field class="col-span-2 fuse-mat-dense fuse-mat-no-subscript fuse-mat-emphasized-affix" >
+                    <input matNativeControl  matInput autocomplete="off" />
+                        <button matSuffix mat-icon-button type="button" [color]="'primary'" >
+                            <mat-icon>search</mat-icon>
+                        </button>
+                </mat-form-field>
+            </div>
+            <div class="col-span-1 grid grid-cols-3 w-full p-1">
+                <mat-label class="col-span-1 m-auto">Obra</mat-label>
+                <mat-form-field class="col-span-2 fuse-mat-dense fuse-mat-no-subscript fuse-mat-emphasized-affix" >
+                    <input  matInput autocomplete="off" />
+                    <button matSuffix mat-icon-button type="button" [color]="'primary'" >
+                        <mat-icon>search</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <div class="col-span-1 grid grid-cols-3 w-full p-1">
+                <mat-label class="col-span-1 m-auto">Elemento</mat-label>
+                <mat-form-field class="col-span-2 fuse-mat-dense fuse-mat-no-subscript" >
+                    <input  matInput autocomplete="off" />
+                </mat-form-field>
+            </div>
+            <div class="col-span-1 grid grid-cols-3 w-full p-1">
+                <mat-label class="col-span-1 m-auto">Mezcla</mat-label>
+                <mat-form-field class="col-span-2 fuse-mat-dense fuse-mat-no-subscript fuse-mat-emphasized-affix" >
+                    <input  matInput autocomplete="off" />
+                    <button matSuffix mat-icon-button type="button" [color]="'primary'" >
+                        <mat-icon>search</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <div class="col-span-1 grid grid-cols-3 w-full p-1">
+                <mat-label class="col-span-1 m-auto">Volumen</mat-label>
+                <mat-form-field class="col-span-2 fuse-mat-dense fuse-mat-no-subscript" >
+                    <input  matInput autocomplete="off" />
+                </mat-form-field>
+            </div>
+            <div class="col-span-1 grid grid-cols-3 w-full p-1">
+                <mat-label class="col-span-1 m-auto">Acumulado</mat-label>
+                <mat-form-field class="col-span-2 fuse-mat-dense fuse-mat-no-subscript" >
+                    <input  matInput autocomplete="off" />
+                </mat-form-field>
+            </div>
+            <div class="col-span-1 grid grid-cols-3 w-full p-1">
+                <mat-label class="col-span-1 m-auto">Chofer</mat-label>
+                <mat-form-field class="col-span-2 fuse-mat-dense fuse-mat-no-subscript fuse-mat-emphasized-affix" >
+                    <input  matInput autocomplete="off" />
+                    <button matSuffix mat-icon-button type="button" [color]="'primary'" >
+                        <mat-icon>search</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <div class="col-span-1 grid grid-cols-3 w-full p-1">
+                <mat-label class="col-span-1 m-auto">Camión</mat-label>
+                <mat-form-field class="col-span-2 fuse-mat-dense fuse-mat-no-subscript fuse-mat-emphasized-affix" >
+                    <input  matInput autocomplete="off" />
+                    <button matSuffix mat-icon-button type="button" [color]="'primary'" >
+                        <mat-icon>search</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <div class="flex flex-0 items-center justify-between border">
+                <div>
+                    <button mat-icon-button type="button"  title="Carga automatica">
+                        <mat-icon svgIcon="heroicons_solid:desktop-computer" class="text-green-400 icon-size-12"></mat-icon>
+                    </button>
+                    <button mat-icon-button type="button"  title="Carga manual">
+                        <mat-icon svgIcon="heroicons_solid:hand" class="text-red-400 icon-size-12"></mat-icon>
+                    </button>
+                </div>
+                <div>
+                    <button mat-icon-button type="button"  title="Cargar">
+                        <mat-icon svgIcon="heroicons_solid:play" class="text-green-400 icon-size-12"></mat-icon>
+                    </button>
+                    <button mat-icon-button type="button"  title="pausar">
+                        <mat-icon svgIcon="heroicons_solid:pause" class="text-yellow-400 icon-size-12"></mat-icon>
+                    </button>
+                    <button mat-icon-button type="button"  title="cancelar">
+                        <mat-icon svgIcon="heroicons_solid:stop" class="text-red-400 icon-size-12"></mat-icon>
+                    </button>
+                </div>
+
+            </div>
+
+        </fuse-card>
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Ajustes</th>
+                <th>%</th>
+                <th>Kg</th>
+              </tr>
+              <tr>
+                <td>Ajuste de Finos</td>
+                <td>0</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>Húmedad Arena</td>
+                <td>2</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>Húmedad Piedra</td>
+                <td>0</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>Agua a Retener</td>
+                <td>0</td>
+                <td>Lt</td>
+              </tr>
+              </thead>
+          </table>
+          <table class="table table-sm table-bordered">
+            <thead>
+                <tr>
+                    <th class="text-center" colspan="5">Materiales a Dosificar</th>
+                </tr>
+              <tr>
+                <th></th>
+                <th>Bache 1</th>
+                <th>Bache 2</th>
+                <th>Bache 3</th>
+                <th>Total</th>
+              </tr>
+              <tr>
+                <th>Cemento</th>
+                <td>1200</td>
+                <td>1200</td>
+                <td>0</td>
+                <td>2400</td>
+              </tr>
+              <tr>
+                <th>Piedra</th>
+                <td>3000</td>
+                <td>3000</td>
+                <td>0</td>
+                <td>6000</td>
+              </tr>
+              <tr>
+                <th>Arena</th>
+                <td>3500</td>
+                <td>3500</td>
+                <td>0</td>
+                <td>7000</td>
+              </tr>
+              </thead>
+          </table>
+    </div>
+    <div class="col-span-9 grid grid-cols-12 ">
+
+            <!-- <fuse-card class="col-span-12 grid grid-cols-12 m-1" >
+                <div class="col-span-12 grid grid-cols-1 p-1">
+                    <button mat-raised-button type="button" [color]="'primary'" class="ml-auto mr-0">
+                        <mat-icon>search</mat-icon> mezclas
+                    </button>
+                </div>
+                <div class="col-span-12 grid grid-cols-1 p-1">
+                    <div class="grid grid-cols-4 ">
+                        <mat-form-field class="col-span-1 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+                            <mat-label>Fecha</mat-label>
+                            <input  matInput autocomplete="off" />
+                        </mat-form-field>
+                        <mat-form-field class="col-span-1 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+                            <mat-label>Hora</mat-label>
+                            <input type="time"  matInput autocomplete="off" />
+                        </mat-form-field>
+                        <mat-form-field class="col-span-1 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+                            <mat-label>Operador</mat-label>
+                            <input  matInput autocomplete="off" />
+                        </mat-form-field>
+                        <mat-form-field class="col-span-1 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+                            <mat-label>Remesa</mat-label>
+                            <input  matInput autocomplete="off" />
+                        </mat-form-field>
+                        <mat-form-field class="col-span-4 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+                            <mat-label>Comentarios</mat-label>
+                            <input  matInput autocomplete="off" />
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-span-12 grid grid-cols-12 p-1">
+                    <table class="col-span-4 table table-bordered ">
+                        <tr>
+                            <th>Mezcla</th><td style="padding: 4px;">
+
+                                <mat-form-field class="col-span-4 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+
+                                    <input  matInput autocomplete="off" />
+                                </mat-form-field>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="">Resistencia</th><td style="padding: 4px;">
+                                <mat-form-field class="col-span-4 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+
+                                    <input matInput autocomplete="off" />
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="">Nombre</th><td style="padding: 4px;" colspan="3">
+                                <mat-form-field class="col-span-4 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+
+                                    <input  matInput autocomplete="off" />
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="">Camion</th><td style="padding: 4px;">
+                                <mat-form-field class="col-span-1 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+
+                                    <mat-select >
+                                        <mat-option *ngFor="let tipo of tipos" [value]="tipo.value">
+                                            {{ tipo.label }}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Chofer</th><td style="padding: 4px;" colspan="3">
+                                <mat-form-field class="col-span-1 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+
+                                    <mat-select >
+                                        <mat-option *ngFor="let tipo of tipos" [value]="tipo.value">
+                                            {{ tipo.label }}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="col-span-4 table table-bordered ">
+                        <tr>
+                            <th>Vol. Despacho</th><td style="padding: 4px;">
+
+                                <mat-form-field class="col-span-4 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+
+                                    <input matInput autocomplete="off" />
+                                </mat-form-field>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="">Vol. Acumulado</th><td style="padding: 4px;">
+                                <mat-form-field class="col-span-4 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+
+                                    <input  matInput autocomplete="off" />
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="">Fractil</th><td style="padding: 4px;" colspan="3">
+                                <mat-form-field class="col-span-4 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+
+                                    <input  matInput autocomplete="off" />
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="">Asentamiento</th><td style="padding: 4px;">
+                                <mat-form-field class="col-span-1 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+
+                                    <mat-select >
+                                        <mat-option *ngFor="let tipo of tipos" [value]="tipo.value">
+                                            {{ tipo.label }}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Silo</th><td style="padding: 4px;" colspan="3">
+                                <mat-form-field class="col-span-1 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+
+                                    <mat-select >
+                                        <mat-option *ngFor="let tipo of tipos" [value]="tipo.value">
+                                            {{ tipo.label }}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="col-span-4 table table-bordered ">
+                        <tr>
+                            <th>Humeda Arena</th><td style="padding: 4px;">
+                                <mat-form-field class="col-span-4 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+
+                                    <input matInput autocomplete="off" />
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="">Ajuste Fino</th><td style="padding: 4px;">
+                                <mat-form-field class="col-span-4 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+
+                                    <input  matInput autocomplete="off" />
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="">Agua Inicial</th><td style="padding: 4px;" colspan="3">
+                                <mat-form-field class="col-span-4 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+
+                                    <input  matInput autocomplete="off" />
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="">Agua Final</th><td style="padding: 4px;">
+                                <mat-form-field class="col-span-1 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+
+                                    <mat-select >
+                                        <mat-option *ngFor="let tipo of tipos" [value]="tipo.value">
+                                            {{ tipo.label }}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Ajuste Agua</th><td style="padding: 4px;" colspan="3">
+                                <mat-form-field class="col-span-1 fuse-mat-dense fuse-mat-no-subscript w-full p-1" >
+
+                                    <mat-select >
+                                        <mat-option *ngFor="let tipo of tipos" [value]="tipo.value">
+                                            {{ tipo.label }}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </fuse-card> -->
+
+            <fuse-card class="col-span-12 m-1 p-1">
+
+                <table class="table table-sm table-bordered m-1 ">
+                    <thead>
+                        <tr>
+                            <th class="text-center " colspan="6">BACHE NRO 1/3</th>
+                        </tr>
+                      <tr>
+                        <th></th>
+                        <th>CEMENTO</th>
+                        <th>PIEDRA</th>
+                        <th>ARENA</th>
+                        <th>AGUA</th>
+                        <th>ADITIVO</th>
+                      </tr>
+                      <tr>
+                        <th>Teórico</th>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <th>Cargado</th>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <th>Diferencia</th>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                      </tr>
+                      </thead>
+                  </table>
+            </fuse-card>
+
+        <div class="col-span-4 grid grid-cols-2 max-h-100 ">
+            <app-tolvas class="col-span-1 p-1" [tipo]="'arena'" [nivel]="nivelArena" [celda]="nivelArena"></app-tolvas>
+            <app-tolvas class="col-span-1 p-1" [tipo]="'piedra'" [nivel]="nivelPiedra" [celda]="nivelPiedra"></app-tolvas>
+        </div>
+        <div class="col-span-8 grid grid-cols-3 max-h-100 ">
+            <app-silos class="col-span-1 p-1" [nro]="'silo 1'" [nivel]="nivelCemento1" [celda]="nivelCemento1"></app-silos>
+            <app-silos class="col-span-1 p-1" [nro]="'silo 2'" [nivel]="nivelCemento2" [celda]="nivelCemento2"></app-silos>
+            <app-silos class="col-span-1 p-1" [nro]="'silo 3'" [nivel]="nivelCemento3" [celda]="nivelCemento3"></app-silos>
+        </div>
+
+        <div class="col-span-12 mt-0 grid grid-cols-4 ">
+            <app-balanza class="col-span-1 p-1" [balanza]="'aridos'"  [nivel]="balanzaAridos" [celda]="balanzaAridos"></app-balanza>
+            <app-balanza class="col-span-1 p-1" [balanza]="'cemento'" [nivel]="balanzaCemento" [celda]="balanzaCemento"></app-balanza>
+            <app-balanza class="col-span-1 p-1" [balanza]="'agua'"    [nivel]="balanzaAgua" [celda]="balanzaAgua"></app-balanza>
+            <app-balanza class="col-span-1 p-1" [balanza]="'aditivo'" [nivel]="balanzaAditivo" [celda]="balanzaAditivo"></app-balanza>
+        </div>
+
+    </div>
+</section>
